@@ -1,0 +1,57 @@
+﻿@using Cattion.Models
+@model IEnumerable<Cattion.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head> <style>    
+    #customers
+    {
+        background-color:rgb(228, 124, 106)
+    }
+    #member
+    {
+        font-family:'Times New Roman', Times, serif;
+        color
+        
+    }
+    
+     </style></head>
+
+<h2>Customers</h2>
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Customers
+                <ul>
+                    @foreach (var customer in Model)
+                    {
+                        <div id="member"> <p style="color:rgb(255, 255, 255)">@Html.ActionLink(customer.name, "Details", new { id = customer.id }, new { @style = "color:white" })</p></div>
+                    }
+                </ul>
+            </th>
+            <th>
+                Membership Type
+                <ul>
+                    @foreach (var customer in Model)
+                    {
+                         <div> <p style="color:rgb(255, 255, 255)">@customer.Membership.name</p></div>
+                    }
+                </ul>
+            </th>
+            <th>
+                Favorite Cat
+                <ul>
+                    @foreach (var customer in Model)
+                    {
+                        <div><p style="color:rgb(255, 255, 255)"> @Html.ActionLink(customer.Cats.name,"CatDetail","Cats",new { name = customer.Cats.name },new { @style = "color:white" })</p></div>
+                    }
+                </ul>
+            </th>
+
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+

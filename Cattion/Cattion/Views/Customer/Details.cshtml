@@ -1,0 +1,17 @@
+﻿@using Cattion.Models
+@model Cattion.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:rgb(102, 189, 65);font-size:32px">@Model.name</h2>
+<div style="display:inline">
+
+    <div><p style="color:white;font-size:24px">Membership Duration : @Model.Membership.DurationInMonths</p>
+    
+    <div><p style="color:white;font-size:24px"> Membership DiscountRate :@Model.Membership.DiscountRate</p></div>
+
+</div>
+

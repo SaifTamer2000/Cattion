@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Cattion.Models.Cats>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cattion Home Page</title>
+    <style>
+        body
+        {
+            display:inline;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    @foreach (var cats in Model)
+    {
+        
+        <div style="margin:5px;display:inline-block;width:500px;height:500px;">
+    <a href="/Cats/CatDetail/@cats.name"><img src=@cats.imagepath style="position:relative;width:100%;height:100%"></a></div>
+    }
+</body>
+
+</html>

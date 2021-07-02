@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Cattion.Models.Cats>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Cats</h2>
+@foreach (var cat in Model)
+{
+    <div style="width:200px;height:200px;margin-bottom:50px">
+        <p style="text-align:center;display:block">
+        @Html.ActionLink(cat.name, "CatDetail", new { name = cat.name })
+            </p>
+        <img src=@cat.imagepath style="width:100%;height:100%">
+    </div>
+}
+    
+
